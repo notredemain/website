@@ -76,7 +76,7 @@ form.addEventListener("submit", async (e) => {
   submit.textContent = "Envoi en cours…";
 
   try {
-    const res = await fetch(form.action, {
+    const res = await fetch(window.location.pathname, {
       method: "POST",
       headers: { Accept: "application/json" },
       body: new FormData(form),
