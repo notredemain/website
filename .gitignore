@@ -5,5 +5,5 @@ dist/
 *.local
 .env
 .DS_Store
-assets-source/
+assets-source/brand-sheet.png
 CLAUDE.md
