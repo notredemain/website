@@ -1,0 +1,24 @@
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="/" class="site-header__logo" aria-label="{{ site.name }} — Accueil">
+      <span class="site-header__logo-mark" aria-hidden="true">nd</span>
+      <span class="site-header__logo-name">Notre Demain</span>
+    </a>
+
+    <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="main-nav" class="main-nav" aria-label="Navigation principale">
+      <ul class="main-nav__list">
+        {% for item in navigation %}
+        <li class="main-nav__item">
+          <a href="{{ item.url }}" class="main-nav__link{% if page.url == item.url %} main-nav__link--active{% endif %}" {% if page.url == item.url %}aria-current="page"{% endif %}>
+            {{ item.label }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

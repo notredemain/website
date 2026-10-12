@@ -1,0 +1,5 @@
+{
+  "layout": "layouts/activity.njk",
+  "tags": ["activity"],
+  "permalink": "/activites/{{ page.fileSlug }}/"
+}

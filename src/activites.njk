@@ -1,0 +1,23 @@
+---
+layout: layouts/page.njk
+title: "Activités"
+description: "Découvrez toutes les activités et ateliers organisés par Notre Demain pour les jeunes haïtiens."
+---
+<div class="container">
+  <header style="margin-block-end: var(--space-12);">
+    <p class="eyebrow">Ce que nous faisons</p>
+    <h1>Nos activités</h1>
+  </header>
+
+  {% if collections.activity and collections.activity.length %}
+  <div class="grid grid--3">
+    {% for activity in collections.activity %}
+      {% include "partials/activity-card.njk" %}
+    {% endfor %}
+  </div>
+  {% else %}
+  <p>Aucune activité pour le moment. Revenez bientôt&nbsp;!</p>
+  {% endif %}
+</div>
+
+{% include "partials/cta-help.njk" %}

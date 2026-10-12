@@ -1,0 +1,54 @@
+---
+layout: layouts/base.njk
+title: false
+description: "Notre Demain éduque les enfants, adolescents et jeunes haïtiens sur le plan spirituel, scolaire, artistique, culturel et manuel pour un avenir meilleur."
+---
+
+<!-- Hero -->
+<section class="section section--blue hero">
+  <div class="container">
+    <p class="eyebrow" style="color: var(--color-lime);">Notre mission</p>
+    <h1 class="text-balance">Construire le Demain d'Haïti, ensemble</h1>
+    <p style="font-size: var(--text-xl); max-width: 52ch; opacity: 0.9;">
+      Notre Demain éduque et accompagne les enfants, adolescents et jeunes haïtiens pour leur offrir un avenir meilleur.
+    </p>
+    <div style="display: flex; gap: var(--space-4); flex-wrap: wrap; margin-top: var(--space-8);">
+      <a href="/a-propos/" class="btn btn--lime">Découvrir le projet</a>
+      <a href="/contact/" class="btn btn--outline" style="color: var(--color-cream); border-color: var(--color-cream);">Nous aider</a>
+    </div>
+  </div>
+</section>
+
+<!-- Mission summary -->
+<section class="section">
+  <div class="container">
+    <div style="max-width: 60ch; margin-inline: auto; text-align: center;" class="stack">
+      <p class="eyebrow">Pourquoi Notre Demain&nbsp;?</p>
+      <h2>Un peuple en manque d'éducation et d'espoir</h2>
+      <p>Seulement 40&nbsp;% de la population haïtienne est alphabétisée. Des milliers d'enfants et de jeunes n'ont ni école, ni métier, ni avenir. Notre Demain est né pour changer cela.</p>
+      <a href="/a-propos/" class="btn btn--outline">Lire notre contexte</a>
+    </div>
+  </div>
+</section>
+
+<!-- Featured activities -->
+{% if collections.activity and collections.activity.length %}
+<section class="section section--lime">
+  <div class="container">
+    <p class="eyebrow">Nos activités</p>
+    <h2>Ce que nous faisons</h2>
+    <div class="grid grid--3">
+      {% for activity in collections.activity %}
+        {% if activity.data.featured %}
+          {% include "partials/activity-card.njk" %}
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div style="margin-top: var(--space-10); text-align: center;">
+      <a href="/activites/" class="btn btn--primary">Toutes nos activités</a>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% include "partials/cta-help.njk" %}

@@ -1,0 +1,20 @@
+{
+  "name": "notre-demain",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Site web de Notre Demain, projet haïtien d'éducation des jeunes.",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-img": "^4.0.0",
+    "html-minifier-terser": "^7.2.0",
+    "lightningcss": "^1.28.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.0"
+  }
+}

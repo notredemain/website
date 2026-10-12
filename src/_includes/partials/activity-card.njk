@@ -1,0 +1,13 @@
+<article class="card{% if activity.data.featured %} card--featured{% endif %}">
+  {% if activity.data.cover %}
+  <div class="card__image">
+    {% imageCard activity.data.cover, (activity.data.coverAlt or "") %}
+  </div>
+  {% endif %}
+  <div class="card__body">
+    <p class="eyebrow">{{ activity.data.location }}</p>
+    <h3 class="card__title"><a href="{{ activity.url }}">{{ activity.data.title }}</a></h3>
+    <p class="card__summary">{{ activity.data.summary }}</p>
+    <a href="{{ activity.url }}" class="btn btn--outline">Découvrir</a>
+  </div>
+</article>

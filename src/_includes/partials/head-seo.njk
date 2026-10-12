@@ -1,0 +1,53 @@
+{% set _desc = description or summary or site.tagline %}
+{% set _ogImg = ogImage or ("/assets/img/" + (cover | replace("assets-source/photos/harmonie-dete/", "") | replace(".jpg", "-800w.jpeg")) if cover else site.defaultOgImage) %}
+
+<title>{% if title %}{{ title }} — {{ site.name }}{% else %}{{ site.name }} — {{ site.tagline }}{% endif %}</title>
+<meta name="description" content="{{ _desc }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.name }}{% endif %}">
+<meta property="og:description" content="{{ _desc }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:type" content="{{ ogType or 'website' }}">
+<meta property="og:image" content="{{ site.url }}{{ _ogImg }}">
+<meta property="og:locale" content="{{ site.locale }}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{% if title %}{{ title }}{% else %}{{ site.name }}{% endif %}">
+<meta name="twitter:description" content="{{ _desc }}">
+<meta name="twitter:image" content="{{ site.url }}{{ _ogImg }}">
+
+<!-- JSON-LD: NGO (all pages) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "name": "{{ site.name }}",
+  "url": "{{ site.url }}",
+  "email": "{{ site.email }}",
+  "areaServed": "HT",
+  "description": "{{ site.tagline }}"
+}
+</script>
+
+{% if ogType == "Event" %}
+<!-- JSON-LD: Event (activity pages) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "{{ title }}",
+  "description": "{{ _desc }}",
+  "url": "{{ site.url }}{{ page.url }}",
+  "organizer": { "@type": "Organization", "name": "Seraphin Kids" },
+  "location": { "@type": "Place", "name": "{{ location }}", "address": { "@type": "PostalAddress", "addressCountry": "HT" } }
+  {% if date %}, "startDate": "{{ date | dateISO }}"{% endif %}
+  {% if endDate %}, "endDate": "{{ endDate | dateISO }}"{% endif %}
+}
+</script>
+{% endif %}
+
+{% if noindex %}<meta name="robots" content="noindex">{% endif %}
