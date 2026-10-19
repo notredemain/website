@@ -8,6 +8,9 @@
 .page-wrapper {
   padding-block: var(--space-16) var(--space-24);
 }
+.page-wrapper--compact {
+  padding-block-end: var(--space-10);
+}
 
 /* Stack: vertical rhythm */
 .stack > * + * { margin-block-start: var(--stack-gap, var(--space-6)); }

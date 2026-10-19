@@ -1,9 +1,14 @@
-<article class="card{% if activity.data.featured %} card--featured{% endif %}">
-  {% if activity.data.cover %}
+<article class="card{% if activity.data.featured %} card--featured{% endif %}{% if activity.data.upcoming %} card--upcoming{% endif %}">
   <div class="card__image">
-    {% imageCard activity.data.cover, (activity.data.coverAlt or "") %}
+    {% if activity.data.cover %}
+      {% imageCard activity.data.cover, (activity.data.coverAlt or "") %}
+    {% else %}
+      <div class="card__image-placeholder" aria-hidden="true"></div>
+    {% endif %}
+    {% if activity.data.upcoming %}
+      <span class="card__badge">À venir</span>
+    {% endif %}
   </div>
-  {% endif %}
   <div class="card__body">
     <p class="eyebrow">{{ activity.data.location }}</p>
     <h3 class="card__title"><a href="{{ activity.url }}">{{ activity.data.title }}</a></h3>
