@@ -19,6 +19,8 @@
 .btn--outline:hover { background: var(--color-blue); color: var(--color-cream); }
 .btn--lime { background: var(--color-lime); color: var(--color-ink); }
 .btn--lime:hover { background: var(--color-lime-30); }
+.btn--pink { background: var(--color-pink); color: #fff; }
+.btn--pink:hover { background: var(--color-pink-dark); color: #fff; }
 
 /* Cards */
 .card {

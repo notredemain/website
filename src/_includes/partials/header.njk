@@ -15,7 +15,7 @@
       <ul class="main-nav__list">
         {% for item in navigation %}
         <li class="main-nav__item">
-          <a href="{{ item.url }}" class="main-nav__link{% if page.url == item.url %} main-nav__link--active{% endif %}" {% if page.url == item.url %}aria-current="page"{% endif %}>
+          <a href="{{ item.url }}" class="{% if item.cta %}btn btn--pink main-nav__cta{% else %}main-nav__link{% if page.url == item.url %} main-nav__link--active{% endif %}{% endif %}" {% if page.url == item.url and not item.cta %}aria-current="page"{% endif %}>
             {{ item.label }}
           </a>
         </li>

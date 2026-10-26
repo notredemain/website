@@ -2,5 +2,5 @@
   { "label": "Accueil",      "url": "/" },
   { "label": "À propos",     "url": "/a-propos/" },
   { "label": "Activités",    "url": "/activites/" },
-  { "label": "Nous aider",   "url": "/contact/" }
+  { "label": "Nous aider",   "url": "/contact/", "cta": true }
 ]
