@@ -13,6 +13,6 @@
     <p class="eyebrow">{{ activity.data.location }}</p>
     <h3 class="card__title"><a href="{{ activity.url }}">{{ activity.data.title }}</a></h3>
     <p class="card__summary">{{ activity.data.summary }}</p>
-    <a href="{{ activity.url }}" class="btn btn--outline">Découvrir</a>
+    <a href="{{ activity.url }}" class="btn btn--outline">{{ "Discover" if lang == "en" else "Découvrir" }}</a>
   </div>
 </article>

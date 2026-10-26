@@ -1,7 +1,13 @@
 <section class="cta-help">
   <div class="container cta-help__inner">
+    {% if lang == "en" %}
+    <h2 class="cta-help__title">Want to help?</h2>
+    <p class="cta-help__text">Join us as a volunteer, partner or donor and contribute to the future of Haitian youth.</p>
+    <a href="/en/contact/" class="btn btn--primary">Contact us</a>
+    {% else %}
     <h2 class="cta-help__title">Vous voulez aider&nbsp;?</h2>
     <p class="cta-help__text">Rejoignez-nous comme bénévole, partenaire ou donateur et contribuez à l'avenir des jeunes haïtiens.</p>
     <a href="/contact/" class="btn btn--primary">Nous contacter</a>
+    {% endif %}
   </div>
 </section>

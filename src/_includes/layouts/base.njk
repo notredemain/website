@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ site.lang }}">
+<html lang="{{ lang or site.lang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="/assets/css/utilities.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Aller au contenu principal</a>
+  <a class="skip-link" href="#main">{{ "Skip to content" if lang == "en" else "Aller au contenu principal" }}</a>
   {% include "partials/header.njk" %}
   <main id="main" tabindex="-1">
     {{ content | safe }}

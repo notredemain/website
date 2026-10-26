@@ -1,6 +1,14 @@
-[
-  { "label": "Accueil",      "url": "/" },
-  { "label": "À propos",     "url": "/a-propos/" },
-  { "label": "Activités",    "url": "/activites/" },
-  { "label": "Nous aider",   "url": "/contact/", "cta": true }
-]
+{
+  "fr": [
+    { "label": "Accueil",    "url": "/" },
+    { "label": "À propos",   "url": "/a-propos/" },
+    { "label": "Activités",  "url": "/activites/" },
+    { "label": "Nous aider", "url": "/contact/", "cta": true }
+  ],
+  "en": [
+    { "label": "Home",       "url": "/en/" },
+    { "label": "About",      "url": "/en/about/" },
+    { "label": "Activities", "url": "/en/activities/" },
+    { "label": "Help us",    "url": "/en/contact/", "cta": true }
+  ]
+}

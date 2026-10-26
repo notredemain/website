@@ -1,25 +1,31 @@
 <header class="site-header">
   <div class="container site-header__inner">
-    <a href="/" class="site-header__logo" aria-label="{{ site.name }} — Accueil">
+    <a href="{{ '/' if (not lang or lang == 'fr') else '/en/' }}" class="site-header__logo" aria-label="Notre Demain — Accueil">
       <img src="/assets/img/logo.png" alt="Notre Demain" width="180" height="90" loading="eager" fetchpriority="high">
     </a>
 
-    <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Ouvrir le menu">
+    <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="{{ 'Ouvrir le menu' if (not lang or lang == 'fr') else 'Open menu' }}">
       <span></span><span></span><span></span>
     </button>
 
-    <nav id="main-nav" class="main-nav" aria-label="Navigation principale">
-      <button class="nav-close" aria-label="Fermer le menu">
+    <nav id="main-nav" class="main-nav" aria-label="{{ 'Navigation principale' if (not lang or lang == 'fr') else 'Main navigation' }}">
+      <button class="nav-close" aria-label="{{ 'Fermer le menu' if (not lang or lang == 'fr') else 'Close menu' }}">
         <span></span><span></span>
       </button>
       <ul class="main-nav__list">
-        {% for item in navigation %}
+        {% set currentNav = navigation[lang] if lang else navigation["fr"] %}
+        {% for item in currentNav %}
         <li class="main-nav__item">
           <a href="{{ item.url }}" class="{% if item.cta %}btn btn--pink main-nav__cta{% else %}main-nav__link{% if page.url == item.url %} main-nav__link--active{% endif %}{% endif %}" {% if page.url == item.url and not item.cta %}aria-current="page"{% endif %}>
             {{ item.label }}
           </a>
         </li>
         {% endfor %}
+        <li class="main-nav__item">
+          <a href="{{ langAlternate or ('/en/' if (not lang or lang == 'fr') else '/') }}" class="lang-toggle" aria-label="{{ 'Switch to English' if (not lang or lang == 'fr') else 'Passer en français' }}">
+            {{ "EN" if (not lang or lang == "fr") else "FR" }}
+          </a>
+        </li>
       </ul>
     </nav>
   </div>

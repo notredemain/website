@@ -1,5 +1,7 @@
 ---
 title: "Harmonie en été"
+lang: fr
+langAlternate: "/en/activities/harmonie-dete/"
 date: 2026-07-30
 endDate: 2026-08-31
 summary: "Camp d'été artistique et sportif organisé par Seraphin Kids, avec le soutien de Notre Demain — pour les 5–18 ans à Delmas, Port-au-Prince."

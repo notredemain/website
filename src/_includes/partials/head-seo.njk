@@ -4,6 +4,10 @@
 <title>{% if title %}{{ title }} — {{ site.name }}{% else %}{{ site.name }} — {{ site.tagline }}{% endif %}</title>
 <meta name="description" content="{{ _desc }}">
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+{% if langAlternate %}
+<link rel="alternate" hreflang="{{ 'en' if lang == 'fr' else 'fr' }}" href="{{ site.url }}{{ langAlternate }}">
+<link rel="alternate" hreflang="{{ lang or 'fr' }}" href="{{ site.url }}{{ page.url }}">
+{% endif %}
 
 <!-- Open Graph -->
 <meta property="og:site_name" content="{{ site.name }}">

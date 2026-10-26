@@ -12,17 +12,17 @@ ogType: Event
 
   <div class="page-wrapper{% if upcoming %} page-wrapper--compact{% endif %}">
     <header class="activity-single__header container">
-      <p class="eyebrow">Activité</p>
+      <p class="eyebrow">{{ "Activity" if lang == "en" else "Activité" }}</p>
       <h1>{{ title }}</h1>
       {% if summary %}<p class="activity-single__summary">{{ summary }}</p>{% endif %}
       <dl class="activity-single__meta">
-        {% if date %}<div><dt>Date</dt><dd>{{ date | dateFR }}{% if endDate %} → {{ endDate | dateFR }}{% endif %}</dd></div>{% endif %}
-        {% if location %}<div><dt>Lieu</dt><dd>{{ location }}</dd></div>{% endif %}
+        {% if date %}<div><dt>{{ "Date" }}</dt><dd>{{ date | dateFR }}{% if endDate %} → {{ endDate | dateFR }}{% endif %}</dd></div>{% endif %}
+        {% if location %}<div><dt>{{ "Location" if lang == "en" else "Lieu" }}</dt><dd>{{ location }}</dd></div>{% endif %}
       </dl>
     </header>
 
     {% if stats and stats.length %}
-    <section class="stats-band" aria-label="Chiffres clés">
+    <section class="stats-band" aria-label="{{ 'Key figures' if lang == 'en' else 'Chiffres clés' }}">
       <ul class="stats-band__list">
         {% for stat in stats %}
         <li class="stats-band__item">
@@ -36,7 +36,7 @@ ogType: Event
 
     {% if upcoming %}
     <div class="upcoming-banner container">
-      <p>🗓 Cette activité est en cours de préparation. Revenez bientôt pour en savoir plus.</p>
+      <p>🗓 {{ "This activity is being prepared. Check back soon for more information." if lang == "en" else "Cette activité est en cours de préparation. Revenez bientôt pour en savoir plus." }}</p>
     </div>
     {% endif %}
 
@@ -48,7 +48,7 @@ ogType: Event
 
     {% if partners and partners.length %}
     <aside class="activity-single__partners container">
-      <p class="eyebrow">Partenaires</p>
+      <p class="eyebrow">{{ "Partners" if lang == "en" else "Partenaires" }}</p>
       <ul class="partners-list">
         {% for partner in partners %}
         <li class="partners-list__item">
@@ -61,8 +61,8 @@ ogType: Event
   </div>
 
   {% if gallery and gallery.length %}
-  <section class="gallery container" aria-label="Galerie photos">
-    <h2>Galerie</h2>
+  <section class="gallery container" aria-label="{{ 'Photo gallery' if lang == 'en' else 'Galerie photos' }}">
+    <h2>{{ "Gallery" if lang == "en" else "Galerie" }}</h2>
     <ul class="gallery__grid">
       {% for photo in gallery %}
       <li class="gallery__item">

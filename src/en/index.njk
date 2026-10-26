@@ -1,0 +1,56 @@
+---
+layout: layouts/base.njk
+title: false
+permalink: /en/
+langAlternate: "/"
+description: "Notre Demain educates and supports Haitian children, teenagers and young people to give them a better future."
+---
+
+<!-- Hero -->
+<section class="section section--blue hero">
+  <div class="container">
+    <p class="eyebrow" style="color: var(--color-lime);">Our mission</p>
+    <h1 class="text-balance">Building Haiti's Tomorrow, together</h1>
+    <p style="font-size: var(--text-xl); max-width: 52ch; opacity: 0.9;">
+      Notre Demain educates and supports Haitian children, teenagers and young people to give them a better future.
+    </p>
+    <div style="display: flex; gap: var(--space-4); flex-wrap: wrap; margin-top: var(--space-8);">
+      <a href="/en/about/" class="btn btn--lime">Discover the project</a>
+      <a href="/en/contact/" class="btn btn--pink">Help us</a>
+    </div>
+  </div>
+</section>
+
+<!-- Mission summary -->
+<section class="section">
+  <div class="container">
+    <div style="max-width: 60ch; margin-inline: auto; text-align: center;" class="stack">
+      <p class="eyebrow">Why Notre Demain?</p>
+      <h2>A people lacking education and hope</h2>
+      <p>Only 40&nbsp;% of the Haitian population is literate. Thousands of children and young people have no school, no trade, no future. Notre Demain was born to change that.</p>
+      <a href="/en/about/" class="btn btn--outline">Read our context</a>
+    </div>
+  </div>
+</section>
+
+<!-- Featured activities -->
+{% if collections.activityEN and collections.activityEN.length %}
+<section class="section section--lime">
+  <div class="container">
+    <p class="eyebrow">Our activities</p>
+    <h2>What we do</h2>
+    <div class="grid grid--3">
+      {% for activity in collections.activityEN %}
+        {% if activity.data.featured %}
+          {% include "partials/activity-card.njk" %}
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div style="margin-top: var(--space-10); text-align: center;">
+      <a href="/en/activities/" class="btn btn--primary">All our activities</a>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% include "partials/cta-help.njk" %}

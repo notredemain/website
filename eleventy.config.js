@@ -10,6 +10,11 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/img");
   eleventyConfig.addPassthroughCopy("src/assets/js");
 
+  // Collections
+  eleventyConfig.addCollection("activityEN", (api) =>
+    api.getFilteredByTag("activityEN").sort((a, b) => b.date - a.date)
+  );
+
   // Plugins
   eleventyConfig.addPlugin(IdAttributePlugin);
   eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);

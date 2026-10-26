@@ -1,6 +1,17 @@
 <footer class="site-footer">
   <div class="container site-footer__inner">
     <p class="site-footer__mission">{{ site.tagline }}</p>
+    {% if lang == "en" %}
+    <nav aria-label="Footer links">
+      <ul class="site-footer__links">
+        <li><a href="/en/about/">About</a></li>
+        <li><a href="/en/activities/">Activities</a></li>
+        <li><a href="/en/contact/">Help us</a></li>
+        <li><a href="/en/privacy/">Privacy</a></li>
+        <li><a href="/en/legal/">Legal</a></li>
+      </ul>
+    </nav>
+    {% else %}
     <nav aria-label="Liens de pied de page">
       <ul class="site-footer__links">
         <li><a href="/a-propos/">À propos</a></li>
@@ -10,6 +21,7 @@
         <li><a href="/mentions-legales/">Mentions légales</a></li>
       </ul>
     </nav>
+    {% endif %}
     <p class="site-footer__contact">
       <a href="mailto:{{ site.email }}">{{ site.email }}</a>
     </p>

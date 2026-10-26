@@ -1,0 +1,6 @@
+{
+  "layout": "layouts/activity.njk",
+  "lang": "en",
+  "tags": ["activityEN"],
+  "permalink": "/en/activities/{{ page.fileSlug }}/"
+}

@@ -1,0 +1,25 @@
+---
+layout: layouts/page.njk
+title: "Activities"
+permalink: /en/activities/
+langAlternate: "/activites/"
+description: "Discover all the activities and workshops organized by Notre Demain for Haitian youth."
+---
+<div class="container">
+  <header style="margin-block-end: var(--space-12);">
+    <p class="eyebrow">What we do</p>
+    <h1>Our Activities</h1>
+  </header>
+
+  {% if collections.activityEN and collections.activityEN.length %}
+  <div class="grid grid--3">
+    {% for activity in collections.activityEN %}
+      {% include "partials/activity-card.njk" %}
+    {% endfor %}
+  </div>
+  {% else %}
+  <p>No activities yet. Check back soon!</p>
+  {% endif %}
+</div>
+
+{% include "partials/cta-help.njk" %}
